@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Commerce Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+header{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+nav{
+    background:#444;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00bfff;
+}
+
+.banner{
+    background:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.banner h2{
+    color:#333;
+}
+
+.banner p{
+    margin-top:10px;
+    color:#666;
+}
+
+.products{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    width:250px;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin-top:10px;
+}
+
+.card p{
+    margin:10px;
+}
+
+button{
+    background:#007bff;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    margin-bottom:15px;
+    border-radius:25px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0056b3;
+    transform:scale(1.05);
+}
+
+section{
+    background:white;
+    margin:20px;
+    padding:40px;
+    border-radius:10px;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+section p{
+    text-align:center;
+    line-height:1.8;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>E-Commerce Website</h1>
+    <p>Project: E-Commerce Website</p>
+    <p>Task: Design Home Page</p>
+    <p>Member: Hari</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="banner">
+    <h2>Welcome to Our Online Store</h2>
+    <p>Discover the Best Deals on Electronics and Accessories</p>
+</div>
+
+<div class="products" id="products">
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400" alt="">
+        <h3>Smart Watch</h3>
+        <p>₹2,999</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="">
+        <h3>Wireless Headphones</h3>
+        <p>₹1,499</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="">
+        <h3>Smart Phone</h3>
+        <p>₹14,999</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" alt="">
+        <h3>Laptop</h3>
+        <p>₹54,999</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="">
+        <h3>Premium Watch</h3>
+        <p>₹3,499</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1585386959984-a41552231658?w=400" alt="">
+        <h3>Bluetooth Speaker</h3>
+        <p>₹1,999</p>
+        <button>Buy Now</button>
+    </div>
+
+</div>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        Welcome to our E-Commerce Website. We are dedicated to providing
+        high-quality electronic products at affordable prices. Our goal is to
+        make online shopping easy, secure, and enjoyable for everyone.
+        We offer the latest gadgets, fast delivery, and excellent customer
+        support to ensure the best shopping experience.
+    </p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@ecomstore.com</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Address: Chennai, Tamil Nadu, India</p>
+</section>
+
+<footer>
+    <p>© 2026 E-Commerce Website | Designed by Hari</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopEase E-Commerce</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+header{
+background:#222;
+color:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h1{
+font-size:28px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+}
+
+.hero{
+background:url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200') center/cover;
+height:400px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+.hero h2{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.hero button{
+padding:12px 25px;
+border:none;
+background:#ff6600;
+color:white;
+font-size:18px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.search{
+text-align:center;
+padding:20px;
+}
+
+.search input{
+width:80%;
+max-width:500px;
+padding:12px;
+font-size:16px;
+border-radius:5px;
+border:1px solid gray;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.product{
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.product img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.product h3{
+margin-top:10px;
+}
+
+.product p{
+margin:10px 0;
+font-size:18px;
+font-weight:bold;
+}
+
+.product button{
+background:#28a745;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.cart{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.cart ul{
+list-style:none;
+margin-top:10px;
+}
+
+.cart li{
+padding:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #ddd;
+}
+
+.cart li button{
+background:red;
+color:white;
+border:none;
+padding:5px 10px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.checkout{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.checkout input,
+.checkout textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid gray;
+border-radius:5px;
+}
+
+.checkout button{
+background:#007bff;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.clear-btn{
+background:red;
+margin-top:10px;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>ShopEase</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">Cart</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Welcome to ShopEase</h2>
+<p>Best Deals on Trending Products</p>
+<br>
+<button onclick="scrollToProducts()">Shop Now</button>
+</section>
+
+<section class="search">
+<input type="text"
+id="searchInput"
+placeholder="Search Products..."
+onkeyup="searchProducts()">
+</section>
+
+<section class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500">
+<h3>Nike Shoes</h3>
+<p>₹2999</p>
+<button onclick="addToCart('Nike Shoes',2999)">
+Add to Cart
+</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500">
+<h3>iPhone</h3>
+<p>₹69999</p>
+<button onclick="addToCart('iPhone',69999)">
+Add to Cart
+</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500">
+<h3>Smart Watch</h3>
+<p>₹4999</p>
+<button onclick="addToCart('Smart Watch',4999)">
+Add to Cart
+</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500">
+<h3>Headphones</h3>
+<p>₹1999</p>
+<button onclick="addToCart('Headphones',1999)">
+Add to Cart
+</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500">
+<h3>Laptop</h3>
+<p>₹54999</p>
+<button onclick="addToCart('Laptop',54999)">
+Add to Cart
+</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=500">
+<h3>Gaming Mouse</h3>
+<p>₹1499</p>
+<button onclick="addToCart('Gaming Mouse',1499)">
+Add to Cart
+</button>
+</div>
+
+</section>
+
+<section class="cart">
+<h2>Shopping Cart</h2>
+
+<ul id="cart-items"></ul>
+
+<br>
+
+<h3>Total: ₹<span id="total">0</span></h3>
+
+<button class="clear-btn" onclick="clearCart()">
+Clear Cart
+</button>
+
+</section>
+
+<section class="checkout">
+
+<h2>Checkout</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+
+<textarea id="address"
+placeholder="Enter Address"></textarea>
+
+<button onclick="placeOrder()">
+Place Order
+</button>
+
+</section>
+
+<footer>
+<p>© 2026 ShopEase. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+let total = 0;
+
+function addToCart(product,price){
+
+let cart=document.getElementById("cart-items");
+
+let li=document.createElement("li");
+
+li.innerHTML=
+product+
+" - ₹"+
+price+
+' <button onclick="removeItem(this,'+
+price+
+')">Remove</button>';
+
+cart.appendChild(li);
+
+total+=price;
+
+document.getElementById("total").innerText=total;
+}
+
+function removeItem(button,price){
+
+button.parentElement.remove();
+
+total-=price;
+
+if(total<0){
+total=0;
+}
+
+document.getElementById("total").innerText=total;
+}
+
+function clearCart(){
+
+document.getElementById("cart-items").innerHTML="";
+
+total=0;
+
+document.getElementById("total").innerText=0;
+}
+
+function placeOrder(){
+
+let name=document.getElementById("name").value;
+let address=document.getElementById("address").value;
+
+if(name==="" || address===""){
+alert("Please fill all details");
+return;
+}
+
+alert(
+"Order Placed Successfully!\n\nCustomer: "
++name+
+"\n\nThank You For Shopping!"
+);
+
+clearCart();
+
+document.getElementById("name").value="";
+document.getElementById("address").value="";
+}
+
+function searchProducts(){
+
+let input=
+document.getElementById("searchInput")
+.value
+.toLowerCase();
+
+let products=
+document.querySelectorAll(".product");
+
+products.forEach(function(product){
+
+let title=
+product.querySelector("h3")
+.innerText
+.toLowerCase();
+
+if(title.includes(input)){
+product.style.display="block";
+}
+else{
+product.style.display="none";
+}
+
+});
+}
+
+function scrollToProducts(){
+
+document.querySelector(".products")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+</body>
+</html>
